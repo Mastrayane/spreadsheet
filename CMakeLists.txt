@@ -2,7 +2,8 @@
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 
 # Устанавливаем имя проекта
-project(spreadsheet)
+set(PROJECT_NAME spreadsheet)
+project(${PROJECT_NAME})
 
 # Устанавливаем стандарт C++17
 set(CMAKE_CXX_STANDARD 17)
@@ -59,7 +60,7 @@ file(GLOB_RECURSE sources
 
 # Создаем исполняемый файл проекта
 add_executable(
-    spreadsheet
+    ${PROJECT_NAME}
     ${ANTLR_FormulaParser_CXX_OUTPUTS}
     ${sources}
 )
@@ -74,10 +75,10 @@ endif()
 
 # Устанавливаем цель для инсталляции
 install(
-    TARGETS spreadsheet
+    TARGETS ${PROJECT_NAME}
     DESTINATION bin
-    EXPORT spreadsheet
+    EXPORT ${PROJECT_NAME}
 )
 
 # Устанавливаем стартовый проект в Visual Studio
-set_directory_properties(PROPERTIES VS_STARTUP_PROJECT spreadsheet)
+set_directory_properties(PROPERTIES VS_STARTUP_PROJECT ${PROJECT_NAME})
