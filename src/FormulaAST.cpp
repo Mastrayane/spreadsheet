@@ -145,6 +145,36 @@ public:
 // Реализуйте метод Evaluate() для бинарных операций.
 // При делении на 0 выбрасывайте ошибку вычисления FormulaError
     double Evaluate() const override {
+        double lhs_value = lhs_->Evaluate();
+        double rhs_value = rhs_->Evaluate();
+        double result;
+
+        switch (type_) {
+            case Add:
+                result = lhs_value + rhs_value;
+                break;
+            case Subtract:
+                result = lhs_value - rhs_value;
+                break;
+            case Multiply:
+                result = lhs_value * rhs_value;
+                break;
+            case Divide:
+                if (rhs_value == 0) {
+                    throw FormulaError("ARITHM");
+                }
+                result = lhs_value / rhs_value;
+                break;
+            default:
+                assert(false);
+                return 0;
+        }
+
+        if (!std::isfinite(result)) {
+            throw FormulaError("ARITHM");
+        }
+
+        return result;
     }
 
 private:
@@ -183,6 +213,26 @@ public:
 
 // Реализуйте метод Evaluate() для унарных операций.
     double Evaluate() const override {
+        double operand_value = operand_->Evaluate();
+        double result;
+
+        switch (type_) {
+            case UnaryPlus:
+                result = operand_value;
+                break;
+            case UnaryMinus:
+                result = -operand_value;
+                break;
+            default:
+                assert(false);
+                return 0;
+        }
+
+        if (!std::isfinite(result)) {
+            throw FormulaError("ARITHM");
+        }
+
+        return result;
     }
 
 private:
