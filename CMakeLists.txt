@@ -1,5 +1,5 @@
 # Устанавливаем минимальную версию CMake
-cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.30.1 FATAL_ERROR)
 
 # Устанавливаем имя проекта
 set(PROJECT_NAME spreadsheet)
@@ -24,7 +24,7 @@ else()
 endif()
 
 # Устанавливаем путь к исполняемому файлу ANTLR
-set(ANTLR_EXECUTABLE ${CMAKE_CURRENT_SOURCE_DIR}/antlr-4.13.2-complete.jar)
+set(ANTLR_EXECUTABLE ${CMAKE_CURRENT_SOURCE_DIR}/antlr4-4.13.2-complete.jar)
 
 # Подключаем скрипт для поиска ANTLR
 include(${CMAKE_CURRENT_SOURCE_DIR}/FindANTLR.cmake)

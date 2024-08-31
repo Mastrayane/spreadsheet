@@ -4,7 +4,7 @@ find_package(Java QUIET COMPONENTS Runtime)
 # Найти исполняемый файл ANTLR, если он еще не найден
 if(NOT ANTLR_EXECUTABLE)
   find_program(ANTLR_EXECUTABLE
-               NAMES antlr.jar antlr4.jar antlr-4.jar antlr-4.13.2-complete.jar)
+             NAMES antlr.jar antlr4.jar antlr-4.jar antlr4-4.13.2-complete.jar)
 endif()
 
 # Если ANTLR и Java найдены, выполнить команду для получения версии ANTLR
