@@ -1,5 +1,0 @@
-build/
-build/.vs/
-dist/
-build/*
-dist/*
