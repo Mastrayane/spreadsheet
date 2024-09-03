@@ -1,0 +1,6 @@
+D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaLexer.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaLexer.obj
+D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaParser.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaParser.obj
+D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaBaseListener.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaBaseListener.obj
+D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaListener.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaListener.obj
+D:\Repositories\spreadsheet\src\FormulaAST.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaAST.obj
+D:\Repositories\spreadsheet\src\main.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\main.obj

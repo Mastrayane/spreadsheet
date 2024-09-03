@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\ac668ed544fc1b70eceb490c0186cc0c\googletest-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\c6f86efc86766ccb9caa0b250c9cce69\googletest-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\862143bb07b6e75de9ae84d82572fa2f\googletest-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Repositories\spreadsheet\build\_deps\googletest-subbuild\CMakeFiles\googletest-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D26BAC4A-E54E-3B16-9027-1F80908EEAB9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

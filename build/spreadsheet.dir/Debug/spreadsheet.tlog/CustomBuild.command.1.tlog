@@ -1,0 +1,24 @@
+^D:\REPOSITORIES\SPREADSHEET\BUILD\CMAKEFILES\54CB4B0529E5AD0E379C8529CE57513D\FORMULALEXER.INTERP.RULE
+setlocal
+cd D:\Repositories\spreadsheet
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Java\jdk-22\bin\java.exe" -jar D:/Repositories/spreadsheet/antlr4-4.13.2-complete.jar Formula.g4 -o D:/Repositories/spreadsheet/build/antlr4cpp_generated_src/Formula -no-listener -Dlanguage=Cpp -listener
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\REPOSITORIES\SPREADSHEET\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Repositories/spreadsheet -BD:/Repositories/spreadsheet/build --check-stamp-file D:/Repositories/spreadsheet/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
