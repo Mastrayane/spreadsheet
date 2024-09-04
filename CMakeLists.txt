@@ -1,5 +1,5 @@
 # Устанавливаем минимальную версию CMake
-cmake_minimum_required(VERSION 3.30.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.30.3 FATAL_ERROR)
 
 # Устанавливаем имя проекта
 set(PROJECT_NAME spreadsheet)

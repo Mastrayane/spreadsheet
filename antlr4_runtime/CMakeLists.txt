@@ -1,5 +1,5 @@
 # -*- mode:cmake -*-
-cmake_minimum_required (VERSION 3.15)
+cmake_minimum_required (VERSION 3.30.3)
 # 3.14 needed because of FetchContent
 # 3.15 needed to avid spew of warnings related to overriding cl command line flags
 
