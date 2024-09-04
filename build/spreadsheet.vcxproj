@@ -416,11 +416,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Repositories\spreadsheet\include\cell.h" />
     <ClInclude Include="D:\Repositories\spreadsheet\include\common.h" />
     <ClInclude Include="D:\Repositories\spreadsheet\include\formula.h" />
+    <ClInclude Include="D:\Repositories\spreadsheet\include\sheet.h" />
     <ClInclude Include="D:\Repositories\spreadsheet\include\test_runner_p.h" />
     <ClCompile Include="D:\Repositories\spreadsheet\src\FormulaAST.cpp" />
     <ClCompile Include="D:\Repositories\spreadsheet\src\cell.cpp" />
     <ClCompile Include="D:\Repositories\spreadsheet\src\formula.cpp" />
     <ClCompile Include="D:\Repositories\spreadsheet\src\main.cpp" />
+    <ClCompile Include="D:\Repositories\spreadsheet\src\sheet.cpp" />
+    <ClCompile Include="D:\Repositories\spreadsheet\src\structures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Repositories\spreadsheet\build\ZERO_CHECK.vcxproj">

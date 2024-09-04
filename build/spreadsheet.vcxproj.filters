@@ -25,6 +25,12 @@
     <ClCompile Include="D:\Repositories\spreadsheet\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Repositories\spreadsheet\src\sheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Repositories\spreadsheet\src\structures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaLexer.h">
@@ -49,6 +55,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Repositories\spreadsheet\include\formula.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Repositories\spreadsheet\include\sheet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Repositories\spreadsheet\include\test_runner_p.h">
