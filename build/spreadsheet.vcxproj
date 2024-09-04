@@ -413,10 +413,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaListener.h" />
     <ClCompile Include="D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaListener.cpp" />
     <ClInclude Include="D:\Repositories\spreadsheet\include\FormulaAST.h" />
+    <ClInclude Include="D:\Repositories\spreadsheet\include\cell.h" />
     <ClInclude Include="D:\Repositories\spreadsheet\include\common.h" />
     <ClInclude Include="D:\Repositories\spreadsheet\include\formula.h" />
     <ClInclude Include="D:\Repositories\spreadsheet\include\test_runner_p.h" />
     <ClCompile Include="D:\Repositories\spreadsheet\src\FormulaAST.cpp" />
+    <ClCompile Include="D:\Repositories\spreadsheet\src\cell.cpp" />
     <ClCompile Include="D:\Repositories\spreadsheet\src\formula.cpp" />
     <ClCompile Include="D:\Repositories\spreadsheet\src\main.cpp" />
   </ItemGroup>

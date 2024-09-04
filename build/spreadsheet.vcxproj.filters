@@ -16,6 +16,9 @@
     <ClCompile Include="D:\Repositories\spreadsheet\src\FormulaAST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Repositories\spreadsheet\src\cell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Repositories\spreadsheet\src\formula.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -37,6 +40,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Repositories\spreadsheet\include\FormulaAST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Repositories\spreadsheet\include\cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Repositories\spreadsheet\include\common.h">

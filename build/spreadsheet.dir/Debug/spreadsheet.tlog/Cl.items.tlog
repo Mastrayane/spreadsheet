@@ -3,5 +3,6 @@ D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaParser.
 D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaBaseListener.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaBaseListener.obj
 D:\Repositories\spreadsheet\build\antlr4cpp_generated_src\Formula\FormulaListener.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaListener.obj
 D:\Repositories\spreadsheet\src\FormulaAST.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\FormulaAST.obj
+D:\Repositories\spreadsheet\src\cell.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\cell.obj
 D:\Repositories\spreadsheet\src\formula.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\formula.obj
 D:\Repositories\spreadsheet\src\main.cpp;D:\Repositories\spreadsheet\build\spreadsheet.dir\Debug\main.obj

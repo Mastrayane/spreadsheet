@@ -3,7 +3,19 @@
   "WorkspaceRootPath": "D:\\Repositories\\spreadsheet\\build\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\include\\cell.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\src\\cell.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\include\\common.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\include\\test_runner_p.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\src\\FormulaAST.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -28,9 +40,6 @@
       "RelativeMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|solutionrelative:antlr4cpp_generated_src\\Formula\\FormulaBaseListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\include\\test_runner_p.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaParser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|solutionrelative:antlr4cpp_generated_src\\Formula\\FormulaParser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -51,9 +60,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\include\\formula.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60362E1F-D989-3D24-90A5-F3F070DBC39C}|spreadsheet.vcxproj|D:\\Repositories\\spreadsheet\\include\\common.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,15 +69,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 187,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "cell.h",
+              "DocumentMoniker": "D:\\Repositories\\spreadsheet\\include\\cell.h",
+              "RelativeDocumentMoniker": "..\\include\\cell.h",
+              "ToolTip": "D:\\Repositories\\spreadsheet\\include\\cell.h",
+              "RelativeToolTip": "..\\include\\cell.h",
+              "ViewState": "AgIAACwAAAAAAAAAAAAcwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-04T15:48:40.228Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "test_runner_p.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\include\\test_runner_p.h",
               "RelativeDocumentMoniker": "..\\include\\test_runner_p.h",
@@ -79,12 +98,11 @@
               "RelativeToolTip": "..\\include\\test_runner_p.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:57:19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "FormulaParser.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaParser.h",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaParser.h",
@@ -92,12 +110,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaParser.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:57:18.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:18.217Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "FormulaListener.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaListener.h",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaListener.h",
@@ -105,12 +122,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaListener.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:57:17.393Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:17.393Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "FormulaLexer.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaLexer.h",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaLexer.h",
@@ -118,12 +134,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaLexer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:57:16.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:16.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "FormulaBaseListener.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaBaseListener.h",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaBaseListener.h",
@@ -131,12 +146,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaBaseListener.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:57:15.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:15.688Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "FormulaAST.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\include\\FormulaAST.h",
               "RelativeDocumentMoniker": "..\\include\\FormulaAST.h",
@@ -144,12 +158,11 @@
               "RelativeToolTip": "..\\include\\FormulaAST.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:57:14.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:14.696Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "formula.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\include\\formula.h",
               "RelativeDocumentMoniker": "..\\include\\formula.h",
@@ -157,31 +170,29 @@
               "RelativeToolTip": "..\\include\\formula.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:57:13.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:13.687Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 2,
               "Title": "common.h",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\include\\common.h",
               "RelativeDocumentMoniker": "..\\include\\common.h",
               "ToolTip": "D:\\Repositories\\spreadsheet\\include\\common.h",
               "RelativeToolTip": "..\\include\\common.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-04T10:56:58.38Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:56:58.38Z"
             }
           ]
         },
         {
           "DockedWidth": 213,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "FormulaParser.cpp",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaParser.cpp",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaParser.cpp",
@@ -189,12 +200,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaParser.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-04T10:57:34.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:34.808Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "FormulaListener.cpp",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaListener.cpp",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaListener.cpp",
@@ -202,12 +212,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaListener.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-04T10:57:33.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:33.76Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "FormulaLexer.cpp",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaLexer.cpp",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaLexer.cpp",
@@ -215,12 +224,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaLexer.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-04T10:57:32.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:32.811Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "FormulaBaseListener.cpp",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\build\\antlr4cpp_generated_src\\Formula\\FormulaBaseListener.cpp",
               "RelativeDocumentMoniker": "antlr4cpp_generated_src\\Formula\\FormulaBaseListener.cpp",
@@ -228,12 +236,11 @@
               "RelativeToolTip": "antlr4cpp_generated_src\\Formula\\FormulaBaseListener.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-04T10:57:31.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:31.689Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FormulaAST.cpp",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\src\\FormulaAST.cpp",
               "RelativeDocumentMoniker": "..\\src\\FormulaAST.cpp",
@@ -241,12 +248,11 @@
               "RelativeToolTip": "..\\src\\FormulaAST.cpp",
               "ViewState": "AgIAAF8BAAAAAAAAAAAnwGYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-04T10:57:30.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:30.848Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "formula.cpp",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\src\\formula.cpp",
               "RelativeDocumentMoniker": "..\\src\\formula.cpp",
@@ -254,20 +260,31 @@
               "RelativeToolTip": "..\\src\\formula.cpp",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-04T10:57:30.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T10:57:30.065Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\Repositories\\spreadsheet\\src\\main.cpp",
               "RelativeDocumentMoniker": "..\\src\\main.cpp",
               "ToolTip": "D:\\Repositories\\spreadsheet\\src\\main.cpp",
               "RelativeToolTip": "..\\src\\main.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-04T10:50:09.517Z",
+              "WhenOpened": "2024-09-04T10:50:09.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cell.cpp",
+              "DocumentMoniker": "D:\\Repositories\\spreadsheet\\src\\cell.cpp",
+              "RelativeDocumentMoniker": "..\\src\\cell.cpp",
+              "ToolTip": "D:\\Repositories\\spreadsheet\\src\\cell.cpp",
+              "RelativeToolTip": "..\\src\\cell.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T15:48:51.219Z",
               "EditorCaption": ""
             }
           ]
