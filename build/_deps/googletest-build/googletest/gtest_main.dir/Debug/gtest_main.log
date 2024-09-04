@@ -1,0 +1,3 @@
+﻿  Building Custom Rule D:/Repositories/spreadsheet/build/_deps/googletest-src/googletest/CMakeLists.txt
+  gtest_main.cc
+  gtest_main.vcxproj -> D:\Repositories\spreadsheet\build\lib\Debug\gtest_maind.lib

@@ -1,0 +1,5 @@
+﻿  Building Custom Rule D:/Repositories/spreadsheet/build/_deps/googletest-src/googlemock/CMakeLists.txt
+  gtest-all.cc
+  gmock-all.cc
+  gmock_main.cc
+  gmock_main.vcxproj -> D:\Repositories\spreadsheet\build\lib\Debug\gmock_maind.lib
