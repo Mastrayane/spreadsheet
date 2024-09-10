@@ -1,1 +1,4 @@
-﻿  gmock.vcxproj -> D:\Repositories\spreadsheet\build\lib\Debug\gmockd.lib
+﻿  Building Custom Rule D:/Repositories/spreadsheet/build/_deps/googletest-src/googlemock/CMakeLists.txt
+  gtest-all.cc
+  gmock-all.cc
+  gmock.vcxproj -> D:\Repositories\spreadsheet\build\lib\Debug\gmockd.lib

@@ -81,4 +81,7 @@
       <UniqueIdentifier>{326BC1BC-2034-355C-BD46-B3246E69684E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram3.cd" />
+  </ItemGroup>
 </Project>

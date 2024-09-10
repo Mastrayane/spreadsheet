@@ -12,52 +12,54 @@
 
 namespace ASTImpl {
 
-enum ExprPrecedence {
-    EP_ADD,
-    EP_SUB,
-    EP_MUL,
-    EP_DIV,
-    EP_UNARY,
-    EP_ATOM,
-    EP_END,
-};
+    // Перечисление для определения приоритета операций
+    enum ExprPrecedence {
+        EP_ADD,    // Сложение
+        EP_SUB,    // Вычитание
+        EP_MUL,    // Умножение
+        EP_DIV,    // Деление
+        EP_UNARY,  // Унарные операции
+        EP_ATOM,   // Атомарные выражения (числа, переменные)
+        EP_END,    // Конец списка приоритетов
+    };
 
-// a bit is set when the parentheses are needed
-enum PrecedenceRule {
-    PR_NONE = 0b00,                // never needed
-    PR_LEFT = 0b01,                // needed for a left child
-    PR_RIGHT = 0b10,               // needed for a right child
-    PR_BOTH = PR_LEFT | PR_RIGHT,  // needed for both children
-};
+    // Флаги для определения необходимости скобок
+    enum PrecedenceRule {
+        PR_NONE = 0b00,                // Скобки не нужны
+        PR_LEFT = 0b01,                // Скобки нужны для левого потомка
+        PR_RIGHT = 0b10,               // Скобки нужны для правого потомка
+        PR_BOTH = PR_LEFT | PR_RIGHT,  // Скобки нужны для обоих потомков
+    };
 
-// PRECEDENCE_RULES[parent][child] determines if parentheses need
-// to be inserted between a parent and a child of specific precedences;
-// for some nodes rules are different for left and right children:
-// (X c Y) p Z  vs  X p (Y c Z)
-//
-// The interesting cases are the ones where removing the parens would change the AST.
-// It may happen when our precedence rules for parentheses are different from
-// the grammatic precedence of operations.
-//
-// Case analysis:
-// A + (B + C) - always okay (nothing of lower grammatic precedence could have been written to the
-// right)
-//    (e.g. if we had A + (B + C) / D, it wouldn't parse in a way
-//    that woudld have given us A + (B + C) as a subexpression to deal with)
-// A + (B - C) - always okay (nothing of lower grammatic precedence could have been written to the
-// right) A - (B + C) - never okay A - (B - C) - never okay A * (B * C) - always okay (the parent
-// has the highest grammatic precedence) A * (B / C) - always okay (the parent has the highest
-// grammatic precedence) A / (B * C) - never okay A / (B / C) - never okay
-// -(A + B) - never okay
-// -(A - B) - never okay
-// -(A * B) - always okay (the resulting binary op has the highest grammatic precedence)
-// -(A / B) - always okay (the resulting binary op has the highest grammatic precedence)
-// +(A + B) - **sometimes okay** (e.g. parens in +(A + B) / C are **not** optional)
-//     (currently in the table we're always putting in the parentheses)
-// +(A - B) - **sometimes okay** (same)
-//     (currently in the table we're always putting in the parentheses)
-// +(A * B) - always okay (the resulting binary op has the highest grammatic precedence)
-// +(A / B) - always okay (the resulting binary op has the highest grammatic precedence)
+    // PRECEDENCE_RULES[родительский][дочерний] определяет, нужно ли вставлять круглые скобки
+    // между родительским и дочерним узлами с определенным приоритетом;
+    // для некоторых узлов правила различаются для левого и правого дочерних узлов:
+    // (X c Y) p Z против X p (Y c Z)
+    //
+    // Интересны случаи, когда удаление круглых скобок изменило бы AST.
+    // Это может произойти, когда наши правила приоритета для круглых скобок отличаются от
+    // грамматического приоритета операций.
+    //
+    // Разбор падежей:
+    // A + (B + C) - всегда в порядке (справа не могло быть записано ничего с более низким грамматическим приоритетом)
+    // (например, если бы у нас было A + (B + C) / D, это не было бы обработано таким образом
+    //, что дало бы нам A + (B + C) в качестве подвыражения, с которым нужно было бы иметь дело)
+    // A + (B - C) - всегда в порядке (справа не могло быть записано ничего с более низким грамматическим приоритетом)
+    // A - (B + C) - никогда не бывает в порядке A - (B - C) - никогда не бывает в порядке A * (B * C) - всегда в порядке(родительский
+    // имеет наивысший грамматический приоритет) A * (B / C) - всегда в порядке (родительский имеет наивысший грамматический приоритет
+    // грамматический приоритет) A / (B * C) - никогда не подходит A / (B / C) - никогда не подходит
+    // -(A + B) - никогда не подходит
+    // -(A - B) - никогда не подходит
+    // -(A * B) - всегда в порядке (результирующая двоичная операция имеет наивысший грамматический приоритет)
+    // -(A / B) - всегда в порядке (результирующая двоичная операция имеет наивысший грамматический приоритет)
+    // +(A + B) - **иногда нормально ** (например, скобки в +(A + B) / C ** необязательны)
+    // (в настоящее время в таблице мы всегда ставим круглые скобки)
+    // +(A - B) - **иногда нормально ** (то же самое)
+    // (в настоящее время в таблице мы всегда указываем в круглых скобках)
+    // +(A * B) - всегда нормально (результирующая двоичная операция имеет наивысший грамматический приоритет)
+    // +(A / B) - всегда в порядке (результирующая двоичная операция имеет наивысший грамматический приоритет)
+
+    // Таблица правил приоритетов для определения необходимости скобок
 constexpr PrecedenceRule PRECEDENCE_RULES[EP_END][EP_END] = {
     /* EP_ADD */ {PR_NONE, PR_NONE, PR_NONE, PR_NONE, PR_NONE, PR_NONE},
     /* EP_SUB */ {PR_RIGHT, PR_RIGHT, PR_NONE, PR_NONE, PR_NONE, PR_NONE},
@@ -67,16 +69,19 @@ constexpr PrecedenceRule PRECEDENCE_RULES[EP_END][EP_END] = {
     /* EP_ATOM */ {PR_NONE, PR_NONE, PR_NONE, PR_NONE, PR_NONE, PR_NONE},
 };
 
+// Абстрактный базовый класс для выражений
 class Expr {
 public:
     virtual ~Expr() = default;
     virtual void Print(std::ostream& out) const = 0;
     virtual void DoPrintFormula(std::ostream& out, ExprPrecedence precedence) const = 0;
+    // Метод для вычисления значения выражения.
     virtual double Evaluate() const = 0;
 
-    // higher is tighter
+    // Возвращает приоритет выражения
     virtual ExprPrecedence GetPrecedence() const = 0;
 
+    // Метод для печати формулы с учетом приоритетов
     void PrintFormula(std::ostream& out, ExprPrecedence parent_precedence,
                       bool right_child = false) const {
         auto precedence = GetPrecedence();
@@ -95,6 +100,7 @@ public:
 };
 
 namespace {
+    // Класс для бинарных операций
 class BinaryOpExpr final : public Expr {
 public:
     enum Type : char {
@@ -125,6 +131,7 @@ public:
         rhs_->PrintFormula(out, precedence, /* right_child = */ true);
     }
 
+    // Возвращает приоритет выражения
     ExprPrecedence GetPrecedence() const override {
         switch (type_) {
             case Add:
@@ -142,8 +149,7 @@ public:
         }
     }
 
-// Реализуйте метод Evaluate() для бинарных операций.
-// При делении на 0 выбрасывайте ошибку вычисления FormulaError
+// Метод для вычисления значения выражения для бинарных операций.
     double Evaluate() const override {
         double lhs_value = lhs_->Evaluate();
         double rhs_value = rhs_->Evaluate();
@@ -183,6 +189,7 @@ private:
     std::unique_ptr<Expr> rhs_;
 };
 
+// Класс для унарных операций
 class UnaryOpExpr final : public Expr {
 public:
     enum Type : char {
@@ -211,7 +218,7 @@ public:
         return EP_UNARY;
     }
 
-// Реализуйте метод Evaluate() для унарных операций.
+// Метод для вычисления значения выражения для унарных операций.
     double Evaluate() const override {
         double operand_value = operand_->Evaluate();
         double result;
@@ -240,6 +247,7 @@ private:
     std::unique_ptr<Expr> operand_;
 };
 
+// Класс для числовых выражений
 class NumberExpr final : public Expr {
 public:
     explicit NumberExpr(double value)
@@ -267,6 +275,7 @@ private:
     double value_;
 };
 
+// Класс для обработки AST и создания дерева выражений
 class ParseASTListener final : public FormulaBaseListener {
 public:
     std::unique_ptr<Expr> MoveRoot() {
@@ -340,6 +349,7 @@ private:
     std::vector<std::unique_ptr<Expr>> args_;
 };
 
+// Класс для обработки ошибок лексического анализа
 class BailErrorListener : public antlr4::BaseErrorListener {
 public:
     void syntaxError(antlr4::Recognizer* /* recognizer */, antlr4::Token* /* offendingSymbol */,
@@ -353,6 +363,7 @@ public:
 }  // namespace
 }  // namespace ASTImpl
 
+// Функция для парсинга AST формулы из потока ввода
 FormulaAST ParseFormulaAST(std::istream& in) {
     using namespace antlr4;
 
@@ -377,6 +388,7 @@ FormulaAST ParseFormulaAST(std::istream& in) {
     return FormulaAST(listener.MoveRoot());
 }
 
+// Функция для парсинга AST формулы из строки
 FormulaAST ParseFormulaAST(const std::string& in_str) {
     std::istringstream in(in_str);
     try {
@@ -386,20 +398,25 @@ FormulaAST ParseFormulaAST(const std::string& in_str) {
     }
 }
 
+// Метод для печати AST в поток вывода
 void FormulaAST::Print(std::ostream& out) const {
     root_expr_->Print(out);
 }
 
+// Метод для печати формулы в поток вывода
 void FormulaAST::PrintFormula(std::ostream& out) const {
     root_expr_->PrintFormula(out, ASTImpl::EP_ATOM);
 }
 
+// Метод для выполнения формулы и получения результата
 double FormulaAST::Execute() const {
     return root_expr_->Evaluate();
 }
 
+// Конструктор класса FormulaAST
 FormulaAST::FormulaAST(std::unique_ptr<ASTImpl::Expr> root_expr)
     : root_expr_(std::move(root_expr)) {
 }
 
+// Деструктор класса FormulaAST
 FormulaAST::~FormulaAST() = default;

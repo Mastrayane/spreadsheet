@@ -13,37 +13,53 @@ using namespace std::literals;
 Sheet::~Sheet() {}
 
 void Sheet::SetCell(Position pos, std::string text) {
-    if (!pos.IsValid()) throw InvalidPositionException("Invalid position");
-    
+    if (!pos.IsValid()) {
+        throw InvalidPositionException("Invalid position");
+    }
+ 
     cells_[pos].Set(text);
 }
 
 const CellInterface* Sheet::GetCell(Position pos) const {
-    if (!pos.IsValid()) throw InvalidPositionException("Invalid position");
+    if (!pos.IsValid()) {
+        throw InvalidPositionException("Invalid position");
+    }
     
     auto it = cells_.find(pos);
-    if (it == cells_.end()) return nullptr;
+    if (it == cells_.end()) {
+        return nullptr;
+    }
 
     const Cell* cell = &cells_.at(pos);
-    if (cell->GetText().size() == 0) return nullptr;
+    if (cell->GetText().size() == 0) {
+        return nullptr;
+    }
 
     return cell;
 }
 
 CellInterface* Sheet::GetCell(Position pos) {
-    if (!pos.IsValid()) throw InvalidPositionException("Invalid position");
+    if (!pos.IsValid()) {
+        throw InvalidPositionException("Invalid position");
+    }
 
     auto it = cells_.find(pos);
-    if (it == cells_.end()) return nullptr;
+    if (it == cells_.end()) {
+        return nullptr;
+    }
 
     Cell* cell = &cells_.at(pos);
-    if (cell->GetText().size() == 0) return nullptr;
+    if (cell->GetText().size() == 0) {
+        return nullptr;
+    }
 
     return cell;
 }
 
 void Sheet::ClearCell(Position pos) {
-    if (!pos.IsValid()) throw InvalidPositionException("Invalid position");
+    if (!pos.IsValid()) {
+        throw InvalidPositionException("Invalid position");
+    }
 
     cells_[pos].Clear();
 }
@@ -51,7 +67,10 @@ void Sheet::ClearCell(Position pos) {
 Size Sheet::GetPrintableSize() const {
     Size result{ 0, 0 };
     
-    if (cells_.begin() == cells_.end()) return result;
+    if (cells_.begin() == cells_.end()) {
+        return result;
+    }
+
     for (auto it = cells_.begin(); it != cells_.end(); ++it) {
         if (it->second.GetText().size() == 0) continue;
         const int col = it->first.col;

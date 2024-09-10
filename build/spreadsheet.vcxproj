@@ -97,7 +97,8 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -141,11 +142,13 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ANTLR4CPP_STATIC;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -187,11 +190,13 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ANTLR4CPP_STATIC;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -234,11 +239,13 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ANTLR4CPP_STATIC;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -436,6 +443,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{C6E66CF8-8440-3038-AF4F-D40111AA1AE3}</Project>
       <Name>antlr4_static</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram3.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

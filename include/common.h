@@ -15,10 +15,11 @@ struct Position {
 
     bool operator==(Position rhs) const;
     bool operator<(Position rhs) const;
-
+    // Проверка, является ли позиция валидной
     bool IsValid() const;
+    // Преобразование позиции в строку
     std::string ToString() const;
-
+    // Преобразование строки в позицию
     static Position FromString(std::string_view str);
 
     static const int MAX_ROWS = 16384;

@@ -1,4 +1,14 @@
-﻿  cell.cpp
+﻿  1>Building FormulaParser with ANTLR 4.13.2
+  Building Custom Rule D:/Repositories/spreadsheet/CMakeLists.txt
+  FormulaLexer.cpp
+  FormulaParser.cpp
+  FormulaBaseListener.cpp
+  FormulaListener.cpp
+  FormulaAST.cpp
+  cell.cpp
+  formula.cpp
   main.cpp
+  sheet.cpp
+  structures.cpp
   Создание кода...
   spreadsheet.vcxproj -> D:\Repositories\spreadsheet\build\Debug\spreadsheet.exe

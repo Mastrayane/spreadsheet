@@ -1,1 +1,3 @@
-﻿  antlr4_tests.vcxproj -> D:\Repositories\spreadsheet\build\antlr4_runtime\runtime\Debug\antlr4_tests.exe
+﻿  Building Custom Rule D:/Repositories/spreadsheet/antlr4_runtime/runtime/CMakeLists.txt
+  Utf8Test.cpp
+  antlr4_tests.vcxproj -> D:\Repositories\spreadsheet\build\antlr4_runtime\runtime\Debug\antlr4_tests.exe
