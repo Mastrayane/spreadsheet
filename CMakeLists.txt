@@ -3,73 +3,66 @@ project(spreadsheet)
 
 set(CMAKE_CXX_STANDARD 17)
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-    set(
-        CMAKE_CXX_FLAGS_DEBUG
-        "${CMAKE_CXX_FLAGS_DEBUG} /JMC"
-    )
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /JMC")
 else()
-    set(
-        CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Wno-unused-parameter -Wno-implicit-fallthrough"
-    )
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Wno-unused-parameter -Wno-implicit-fallthrough")
 endif()
 
-set(ANTLR_EXECUTABLE ${CMAKE_CURRENT_SOURCE_DIR}/src/antlr4-4.13.2-complete.jar)
-include(${CMAKE_CURRENT_SOURCE_DIR}/src/FindANTLR.cmake)
-
-add_definitions(
-    -DANTLR4CPP_STATIC
-    -D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
-)
-
-# Исправленный подход: Скачиваем ANTLR и подключаем C++ runtime вручную
+# Получаем последнюю версию ANTLR с GitHub
 include(FetchContent)
 FetchContent_Declare(
-    antlr4
+    antlr4_latest
     GIT_REPOSITORY https://github.com/antlr/antlr4.git
-    GIT_TAG 4.13.2
+    GIT_TAG master
+    DOWNLOAD_EXTRACT_TIMESTAMP TRUE
 )
-FetchContent_GetProperties(antlr4)
-if(NOT antlr4_POPULATED)
-    FetchContent_Populate(antlr4)
-    add_subdirectory(${antlr4_SOURCE_DIR}/runtime/Cpp ${antlr4_BINARY_DIR})  # Добавляем C++ runtime
+FetchContent_MakeAvailable(antlr4_latest)
+
+# Чтение версии из runtime/Cpp/VERSION
+set(ANTLR_VERSION_FILE "${antlr4_latest_SOURCE_DIR}/runtime/Cpp/VERSION")
+if(EXISTS ${ANTLR_VERSION_FILE})
+    file(READ ${ANTLR_VERSION_FILE} ANTLR_VERSION)
+    string(STRIP "${ANTLR_VERSION}" ANTLR_VERSION)  # Исправление ошибки STRIP
+    message(STATUS "Используется ANTLR версии: ${ANTLR_VERSION}")
+else()
+    message(FATAL_ERROR "Файл VERSION не найден в ${ANTLR_VERSION_FILE}")
 endif()
 
-# Проверка, что цель antlr4_static существует
+
+# Загрузка ANTLR JAR (теперь имя файла зависит от версии)
+set(ANTLR_JAR_URL "https://www.antlr.org/download/antlr-${ANTLR_VERSION}-complete.jar")
+set(ANTLR_JAR_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/antlr4-${ANTLR_VERSION}-complete.jar")
+
+if (NOT EXISTS ${ANTLR_JAR_PATH})
+    message(STATUS "Загрузка ANTLR JAR...")
+    file(DOWNLOAD ${ANTLR_JAR_URL} ${ANTLR_JAR_PATH} SHOW_PROGRESS)
+endif()
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/src/FindANTLR.cmake)  # Передаем ANTLR_VERSION_FILE через область видимости
+
+# Подключаем ANTLR C++ runtime
+add_subdirectory(${antlr4_latest_SOURCE_DIR}/runtime/Cpp ${antlr4_latest_BINARY_DIR})
+
+# Проверка цели antlr4_static
 if (NOT TARGET antlr4_static)
     message(FATAL_ERROR "ANTLR C++ runtime не найден!")
 else()
     message(STATUS "ANTLR C++ runtime подключен.")
 endif()
 
-# Генерация парсера
+# Генерация парсера через FindANTLR.cmake
 antlr_target(FormulaParser ${CMAKE_CURRENT_SOURCE_DIR}/src/Formula.g4 LEXER PARSER LISTENER)
 
 include_directories(
     ${ANTLR4_INCLUDE_DIRS}
     ${ANTLR_FormulaParser_OUTPUT_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
-    ${antlr4_SOURCE_DIR}/runtime/Cpp/runtime/src  # Путь к заголовкам
+    ${antlr4_latest_SOURCE_DIR}/runtime/Cpp/runtime/src
 )
 
-file(GLOB sources
-    src/*.cpp
-    src/*.h
-)
-
-add_executable(
-    spreadsheet
-    ${ANTLR_FormulaParser_CXX_OUTPUTS}
-    ${sources}
-)
-
-# Линкуем статическую библиотеку ANTLR
+file(GLOB sources src/*.cpp src/*.h)
+add_executable(spreadsheet ${ANTLR_FormulaParser_CXX_OUTPUTS} ${sources})
 target_link_libraries(spreadsheet antlr4_static)
 
-install(
-    TARGETS spreadsheet
-    DESTINATION bin
-    EXPORT spreadsheet
-)
-
+install(TARGETS spreadsheet DESTINATION bin EXPORT spreadsheet)
 set_directory_properties(PROPERTIES VS_STARTUP_PROJECT spreadsheet)
