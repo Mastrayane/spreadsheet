@@ -38,6 +38,15 @@ if (NOT EXISTS ${ANTLR_JAR_PATH})
     file(DOWNLOAD ${ANTLR_JAR_URL} ${ANTLR_JAR_PATH} SHOW_PROGRESS)
 endif()
 
+# Удаляем старые JAR-файлы
+file(GLOB OLD_JAR_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/antlr4-*-complete.jar")
+foreach(JAR_FILE IN LISTS OLD_JAR_FILES)
+    if(NOT JAR_FILE STREQUAL ANTLR_JAR_PATH)
+        message(STATUS "Удаление старого JAR-файла: ${JAR_FILE}")
+        file(REMOVE ${JAR_FILE})
+    endif()
+endforeach()
+
 include(${CMAKE_CURRENT_SOURCE_DIR}/src/FindANTLR.cmake)  # Передаем ANTLR_VERSION_FILE через область видимости
 
 # Подключаем ANTLR C++ runtime
