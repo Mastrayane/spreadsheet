@@ -35,7 +35,7 @@
 ```bash
 mkdir build
 cd build
-cmake ../spreadsheet
+cmake ..
 cmake --build .
 ```
 
